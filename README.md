@@ -11,7 +11,12 @@ Tipos de campos aceitos na versão inicial: number, decimal, text
 
 Formato: {'valor': 'decimal', 'valor2': 'number', 'valor3': 'text'}
 
+https://github.com/MarceloJDCB/loansforgood/assets/91851259/ec893bce-cfeb-4bbb-a3cb-31cb50680ba5
+
+
 ### Administração das propostas pendentes de análise humana
+
+https://github.com/MarceloJDCB/loansforgood/assets/91851259/4c4e7c64-a9e6-4b28-9b86-a6c1f4cca08a
 
 
 ## Instalação, desenvolvimento e manutenção da aplicação
