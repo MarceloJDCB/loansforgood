@@ -45,10 +45,14 @@ https://github.com/MarceloJDCB/loansforgood/assets/91851259/4c4e7c64-a9e6-4b28-9
 
 Usuário de testes: N: DigitalSys P: 123
 
+URL: localhost:8000
+
 #### Frontend
 `cd frontend`
 
 `$ make init`
+
+URL: localhost:8080
 
 ### Comandos Makefile
 #### Backend
