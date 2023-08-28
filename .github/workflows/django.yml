@@ -28,4 +28,4 @@ jobs:
         working-directory: ./backend
         env:
          DJANGO_SETTINGS_MODULE: core.settings_test
-        run:  pytest
+        run:  py.test
