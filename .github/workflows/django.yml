@@ -1,4 +1,4 @@
-name: Django Tests
+name: LOANS Tests
 "on":
   push:
     branches:
