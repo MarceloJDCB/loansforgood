@@ -25,4 +25,8 @@ class ProposalRequirementsFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = ProposalRequirements
 
-    proposal_required_fields = factory.Faker("text")
+    proposal_required_fields = """{
+        "cpf": "number",
+        "cnpj": "number",
+        "reason": "text"
+    }"""

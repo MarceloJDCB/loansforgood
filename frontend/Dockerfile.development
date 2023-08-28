@@ -4,7 +4,6 @@ ARG STAGE
 FROM node:14.19.3-alpine AS build_stage
 WORKDIR /app
 COPY package.json .
-COPY yarn.lock .
-RUN yarn install
+RUN npm install
 COPY . .
 CMD ["sh", "-c", "npm run serve"]

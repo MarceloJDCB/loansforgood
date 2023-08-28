@@ -26,18 +26,36 @@ class ProposalRequirements(BaseModel):
         return self.proposal_required_fields
 
     @property
-    def proposal_required_fields_dict(self) -> dict:
-        return ast.literal_eval(self.proposal_required_fields)
-
-    def validate_requirements(self, document_propose: dict):
-        field_validators = {
+    def field_validators(self):
+        return {
             "number": IntegerField(),
             "text": CharField(),
             "decimal": DecimalField(max_digits=13, decimal_places=2),
         }
+
+    @property
+    def proposal_required_fields_dict(self) -> dict:
+        return ast.literal_eval(self.proposal_required_fields)
+
+    def clean(self) -> None:
+        self.fields_required_is_valid()
+        return super().clean()
+
+    def fields_required_is_valid(self):
+        try:
+            if self.proposal_required_fields:
+                for field, value in self.proposal_required_fields_dict.items():
+                    if value not in self.field_validators:
+                        raise DjangoValidationError(
+                            f"O tipo {value} não é suportado pelo sistema!"
+                        )
+        except (SyntaxError, ValueError):
+            raise DjangoValidationError("Formato dos campos da proposta inválido!")
+
+    def validate_requirements(self, document_propose: dict):
         for field, value in document_propose.items():
             field_type = self.proposal_required_fields_dict.get(field)
-            validator = field_validators.get(field_type)
+            validator = self.field_validators.get(field_type)
             if not validator:
                 raise ValidationError({field: "Verique o formulário enviado com a administração!"})
             validator.field_name = field
