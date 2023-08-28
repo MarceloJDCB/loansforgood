@@ -28,7 +28,7 @@ jobs:
           pip install -r requirements.txt
       - name: Backend code lint
         run: |
-          flake8
+          flake8 .
       - name: Test with pytest
         working-directory: ./backend
         run: |
