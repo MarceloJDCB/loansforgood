@@ -23,3 +23,7 @@ jobs:
       - name: Test with pytest
         working-directory: ./backend
         run: py.test
+        env:
+          SECRET_KEY: 123
+          DEBUG: True
+          ALLOWED_HOSTS: 0.0.0.0,127.0.0.1,localhost
