@@ -1,5 +1,5 @@
 name: Django Tests
-'on':
+"on":
   push:
     branches:
       - master
@@ -14,7 +14,7 @@ jobs:
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8'
+          python-version: "3.8"
       - name: Install dependencies
         working-directory: ./backend
         run: |
@@ -27,7 +27,15 @@ jobs:
       - name: Test with pytest
         working-directory: ./backend
         run: |
-         export DJANGO_SETTINGS_MODULE=core.settings_test
-         py.test
+          export DJANGO_SETTINGS_MODULE=core.settings_test
+          py.test
         env:
-          SECRET_KEY: 123
+          SECRET_KEY: teste
+          DEBUG: True
+          ALLOWED_HOSTS: 0.0.0.0,127.0.0.1,localhost
+          DB_ENGINE: teste
+          POSTGRES_DB: teste
+          POSTGRES_USER: teste
+          POSTGRES_PASSWORD: teste
+          DB_HOST: teste
+          DB_PORT: teste

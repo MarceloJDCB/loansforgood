@@ -4,10 +4,6 @@ from .settings import *
 
 env = environ.Env()
 
-SECRET_KEY = "teste"
-DEBUG = True
-ALLOWED_HOSTS = ["0.0.0.0", "127.0.0.1", "localhost"]
-
 STATIC_URL = env("STATIC_URL", default="/static/")
 STATIC_ROOT = env("STATIC_ROOT", default="staticfiles")
 
