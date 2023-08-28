@@ -28,7 +28,6 @@ def test_credit_proposal_wrong_fields(db, client, headers):
 
 @patch(
     "apps.credit_proposal.api.serializers.submit_proposal_for_loan.apply_async", lambda args, queue, routing_key: ""
-    
 )
 def test_credit_proposal(db, client, headers):
     url = reverse("api:credit_proposal:credit-proposal-list")
