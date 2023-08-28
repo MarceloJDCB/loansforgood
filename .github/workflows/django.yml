@@ -37,5 +37,5 @@ jobs:
         working-directory: ./backend
         run: |
           cp -f .env.sample .env
-	        cat src/.env.sample >> .env
+	  cat src/.env.sample >> .env
           pytest -vv
