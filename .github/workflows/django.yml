@@ -26,6 +26,6 @@ jobs:
           cp -f .env.sample .env
       - name: Test with pytest
         working-directory: ./backend
-        env:
-         DJANGO_SETTINGS_MODULE: core.settings_test
-        run:  py.test
+        run: |
+         export DJANGO_SETTINGS_MODULE=core.settings_test
+         py.test
