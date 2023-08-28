@@ -13,4 +13,7 @@ stop:
 down:
 	docker-compose down --remove-orphans
 
-init : build up
+npm_install:
+	npm install
+
+init : npm_install build up
