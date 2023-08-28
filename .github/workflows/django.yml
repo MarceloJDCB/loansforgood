@@ -21,16 +21,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install --upgrade pip setuptools wheel
-      #- name: Backend code lint
-      #  run: |
-      #    flake8 .
       - name: Copy env
         working-directory: ./backend
         run: |
           cp -f .env.sample .env
-          export DJANGO_SETTINGS_MODULE=core.settings_test
-          export $(grep -v '^#' .env | xargs)
-      - name: Test with pytest
+      - name: Test with pytest and Backend code lint
         working-directory: ./backend
         run: |
+          export DJANGO_SETTINGS_MODULE=core.settings_test
+          export $(grep -v '^#' .env | xargs)
+          flake8
           py.test
