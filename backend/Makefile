@@ -147,7 +147,7 @@ recreate_db: show_env _drop_db _create_db migrate
 createsu: show_env
 	docker-compose ${DOCKER_COMPOSE_FILE} exec web ${PYTHON_EXEC} ./manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('DigitalSys', 'admin@digitalsys.com', '123'); print('Superuser created: admin@digitalsys.com:123')"
 
-init : show_env build migrate createsu up log
+init : _cp_env_file show_env build migrate createsu up log
 
 migrate:
 	docker-compose ${DOCKER_COMPOSE_FILE} exec web ${PYTHON_EXEC} ./manage.py migrate
