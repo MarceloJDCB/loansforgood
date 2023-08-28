@@ -26,7 +26,9 @@ def test_credit_proposal_wrong_fields(db, client, headers):
     assert response.status_code == 400
 
 
-@patch("apps.credit_proposal.api.serializers.submit_proposal_for_loan.delay", lambda data: data)
+@patch(
+    "apps.credit_proposal.api.serializers.submit_proposal_for_loan.apply_async", lambda data: data
+)
 def test_credit_proposal(db, client, headers):
     url = reverse("api:credit_proposal:credit-proposal-list")
 
