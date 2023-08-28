@@ -28,14 +28,5 @@ jobs:
         working-directory: ./backend
         run: |
           export DJANGO_SETTINGS_MODULE=core.settings_test
+          export $(grep -v '^#' .env | xargs)
           py.test
-        env:
-          SECRET_KEY: teste
-          DEBUG: True
-          ALLOWED_HOSTS: 0.0.0.0,127.0.0.1,localhost
-          DB_ENGINE: teste
-          POSTGRES_DB: teste
-          POSTGRES_USER: teste
-          POSTGRES_PASSWORD: teste
-          DB_HOST: teste
-          DB_PORT: teste
