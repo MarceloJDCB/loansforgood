@@ -9,6 +9,8 @@ staticfiles/
 /media/
 mediafiles/
 
+.pgdata/
+.dumps/
 src/main/model_factories/
 
 node_modules/
