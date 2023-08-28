@@ -33,6 +33,8 @@ https://github.com/MarceloJDCB/loansforgood/assets/91851259/4c4e7c64-a9e6-4b28-9
 #### Ubuntu ou WSL
 `$ sudo apt install make -y`
 #### Backend
+`cd backend`
+
 `$ sudo apt update -y`
 
 `$ sudo apt install software-properties-common -y`
@@ -41,6 +43,7 @@ https://github.com/MarceloJDCB/loansforgood/assets/91851259/4c4e7c64-a9e6-4b28-9
 
 `$ make init`
 #### Frontend
+`cd frontend`
 
 `$ make init`
 
