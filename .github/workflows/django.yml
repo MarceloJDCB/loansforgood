@@ -29,3 +29,5 @@ jobs:
         run: |
          export DJANGO_SETTINGS_MODULE=core.settings_test
          py.test
+        env:
+          SECRET_KEY: 123
