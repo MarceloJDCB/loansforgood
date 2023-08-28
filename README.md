@@ -29,6 +29,11 @@ https://github.com/MarceloJDCB/loansforgood/assets/91851259/4c4e7c64-a9e6-4b28-9
 - Docker >=20
 - docker-compose >=1.21
 
+### Endpoints Swagger
+- /swagger/
+
+- /redoc/
+
 ### Setup ambiente
 #### Ubuntu ou WSL
 `$ sudo apt install make -y`
