@@ -15,12 +15,6 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: "3.8"
-      - name: Copy env
-        working-directory: ./backend
-        run: |
-          cp -f .env.sample .env
-          export DJANGO_SETTINGS_MODULE=core.settings_test
-          export $(grep -v '^#' .env | xargs)
       - name: Install dependencies
         working-directory: ./backend
         run: |
@@ -30,6 +24,12 @@ jobs:
       #- name: Backend code lint
       #  run: |
       #    flake8 .
+      - name: Copy env
+        working-directory: ./backend
+        run: |
+          cp -f .env.sample .env
+          export DJANGO_SETTINGS_MODULE=core.settings_test
+          export $(grep -v '^#' .env | xargs)
       - name: Test with pytest
         working-directory: ./backend
         run: |
